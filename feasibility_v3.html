@@ -1,0 +1,2142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دراسة جدوى — محمود خالد الترامسي</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #080F1A;
+      --navy2: #0D1B2E;
+      --blue: #1565C0;
+      --blue2: #1E88E5;
+      --cyan: #00BCD4;
+      --cyan2: #26C6DA;
+      --orange: #E65100;
+      --orange2: #FF8F00;
+      --gold: #FFB300;
+      --green: #00695C;
+      --green2: #00897B;
+      --red: #C62828;
+      --gray: #7B8FA1;
+      --light: #B0C4D8;
+      --white: #EEF4FF;
+      --card: rgba(255, 255, 255, 0.035);
+      --glass: rgba(255, 255, 255, 0.06);
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Cairo', sans-serif;
+      overflow-x: hidden;
+      direction: rtl;
+    }
+
+    /* BG */
+    .bg-fx {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 90% 55% at 10% 5%, rgba(21, 101, 192, 0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 50% at 85% 85%, rgba(0, 188, 212, 0.10) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 50% 40%, rgba(230, 81, 0, 0.05) 0%, transparent 55%);
+    }
+
+    .bg-grid {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      background-size: 55px 55px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 200;
+      background: rgba(8, 15, 26, 0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 28px;
+      height: 58px;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Tajawal', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--cyan);
+    }
+
+    .nav-brand span {
+      font-size: 12px;
+      color: var(--gray);
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2px;
+    }
+
+    .nl {
+      font-size: 12px;
+      color: var(--gray);
+      text-decoration: none;
+      padding: 5px 13px;
+      border-radius: 20px;
+      transition: .2s;
+      font-weight: 600;
+    }
+
+    .nl:hover,
+    .nl.active {
+      color: var(--white);
+      background: rgba(0, 188, 212, 0.12);
+      color: var(--cyan);
+    }
+
+    @media(max-width:680px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+
+    .hero-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 188, 212, 0.1);
+      border: 1px solid rgba(0, 188, 212, 0.3);
+      color: var(--cyan);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      padding: 6px 18px;
+      border-radius: 30px;
+      margin-bottom: 28px;
+      animation: fd .8s ease both;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-family: 'Tajawal', sans-serif;
+      font-size: clamp(36px, 7.5vw, 80px);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      animation: fd .9s .1s ease both;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(120deg, var(--cyan), var(--blue2), var(--orange2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-by {
+      font-size: 14px;
+      color: var(--gray);
+      margin-bottom: 6px;
+      animation: fd .9s .15s ease both;
+    }
+
+    .hero-name {
+      font-family: 'Tajawal', sans-serif;
+      font-size: clamp(18px, 3vw, 26px);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 28px;
+      animation: fd .9s .2s ease both;
+    }
+
+    .hero-name span {
+      color: var(--cyan);
+    }
+
+    .hero-desc {
+      font-size: clamp(14px, 2.5vw, 17px);
+      color: var(--gray);
+      max-width: 560px;
+      line-height: 1.8;
+      margin-bottom: 50px;
+      animation: fd 1s .25s ease both;
+    }
+
+    .hero-kpis {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fd 1s .35s ease both;
+    }
+
+    .kpi {
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 26px;
+      text-align: center;
+      min-width: 130px;
+    }
+
+    .kpi-val {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--cyan), var(--blue2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .kpi-lbl {
+      font-size: 11px;
+      color: var(--gray);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .scroll-arrow {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--gray);
+      font-size: 13px;
+      animation: bounce 2.2s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(-7px);
+      }
+    }
+
+    /* SECTION */
+    .sec {
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 70px 22px;
+    }
+
+    .sec-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    .sec-num {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--cyan);
+      background: rgba(0, 188, 212, 0.1);
+      border: 1px solid rgba(0, 188, 212, 0.25);
+      padding: 4px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    .sec-ttl {
+      font-family: 'Tajawal', sans-serif;
+      font-size: clamp(22px, 3.5vw, 36px);
+      font-weight: 800;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.07), transparent);
+      margin: 0 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Q&A */
+    .qa-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .qa {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: border-color .3s, transform .3s;
+    }
+
+    .qa:hover {
+      border-color: rgba(0, 188, 212, 0.25);
+      transform: translateX(-3px);
+    }
+
+    .qa-q {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 24px;
+      background: rgba(230, 81, 0, 0.07);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .qa-a {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px 24px;
+    }
+
+    .badge-q {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--orange), var(--orange2));
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+      color: #fff;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .badge-a {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+      color: #fff;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .qt {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.6;
+      padding-top: 3px;
+    }
+
+    .at {
+      font-size: 15px;
+      color: rgba(238, 244, 255, .83);
+      line-height: 1.8;
+      padding-top: 3px;
+    }
+
+    .at strong {
+      color: var(--cyan);
+    }
+
+    .at b {
+      color: var(--orange2);
+    }
+
+    /* BOXES */
+    .box {
+      border-radius: 14px;
+      padding: 18px 24px;
+      margin: 20px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .box::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .box-blue {
+      background: rgba(21, 101, 192, 0.08);
+      border: 1px solid rgba(21, 101, 192, 0.2);
+    }
+
+    .box-blue::before {
+      background: linear-gradient(180deg, var(--cyan), var(--blue));
+    }
+
+    .box-orange {
+      background: rgba(230, 81, 0, 0.07);
+      border: 1px solid rgba(230, 81, 0, 0.2);
+    }
+
+    .box-orange::before {
+      background: linear-gradient(180deg, var(--orange), var(--gold));
+    }
+
+    .box-green {
+      background: rgba(0, 105, 92, 0.1);
+      border: 1px solid rgba(0, 137, 123, 0.25);
+    }
+
+    .box-green::before {
+      background: linear-gradient(180deg, var(--green2), #4CAF50);
+    }
+
+    .box p {
+      font-size: 14px;
+      color: rgba(238, 244, 255, .85);
+      line-height: 1.85;
+    }
+
+    .box p strong {
+      color: var(--cyan);
+    }
+
+    .box p b {
+      color: var(--gold);
+    }
+
+    /* CARDS GRID */
+    .g2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .g3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .g4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      transition: .3s;
+    }
+
+    .card:hover {
+      background: var(--glass);
+      border-color: rgba(0, 188, 212, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .card-ico {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .card-ttl {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 7px;
+    }
+
+    .card-txt {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 11px;
+      border-radius: 20px;
+      margin-top: 9px;
+    }
+
+    .tag-c {
+      background: rgba(0, 188, 212, .12);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 188, 212, .25);
+    }
+
+    .tag-o {
+      background: rgba(255, 143, 0, .12);
+      color: var(--orange2);
+      border: 1px solid rgba(255, 143, 0, .25);
+    }
+
+    .tag-g {
+      background: rgba(0, 137, 123, .12);
+      color: var(--green2);
+      border: 1px solid rgba(0, 137, 123, .25);
+    }
+
+    .tag-gold {
+      background: rgba(255, 179, 0, .12);
+      color: var(--gold);
+      border: 1px solid rgba(255, 179, 0, .25);
+    }
+
+    /* TABLE */
+    .tbl-wrap {
+      overflow-x: auto;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      margin: 20px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      background: rgba(21, 101, 192, 0.22);
+      padding: 12px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cyan);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      transition: .2s;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: rgba(255, 255, 255, .025);
+    }
+
+    tbody td {
+      padding: 12px 18px;
+      font-size: 13px;
+      color: rgba(238, 244, 255, .82);
+      text-align: right;
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(255, 255, 255, .018);
+    }
+
+    .hl {
+      color: var(--cyan);
+      font-weight: 700;
+    }
+
+    .hl-gold {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .hl-green {
+      color: var(--green2);
+      font-weight: 700;
+    }
+
+    .hl-red {
+      color: #EF9A9A;
+      font-weight: 700;
+    }
+
+    .hl-orange {
+      color: var(--orange2);
+      font-weight: 700;
+    }
+
+    /* SHARE SLIDER */
+    .share-section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin: 28px 0;
+    }
+
+    .share-title {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .share-sub {
+      font-size: 13px;
+      color: var(--gray);
+      margin-bottom: 28px;
+    }
+
+    .slider-group {
+      margin-bottom: 26px;
+    }
+
+    .slider-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .slider-lbl-txt {
+      font-size: 14px;
+      color: var(--light);
+      font-weight: 600;
+    }
+
+    .slider-lbl-val {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--cyan);
+      transition: .2s;
+    }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--blue2));
+      box-shadow: 0 0 12px rgba(0, 188, 212, 0.5);
+      cursor: pointer;
+      border: 3px solid var(--navy);
+    }
+
+    .share-results {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .sr-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .sr-card.founder {
+      border-color: rgba(0, 188, 212, 0.25);
+      background: rgba(0, 188, 212, 0.06);
+    }
+
+    .sr-card.partner {
+      border-color: rgba(255, 143, 0, 0.25);
+      background: rgba(255, 143, 0, 0.06);
+    }
+
+    .sr-who {
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .sr-pct {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 40px;
+      font-weight: 900;
+    }
+
+    .sr-pct.cyan {
+      color: var(--cyan);
+    }
+
+    .sr-pct.orange {
+      color: var(--orange2);
+    }
+
+    .sr-detail {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    .sr-amount {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 8px;
+    }
+
+    /* DONUT SVG */
+    .donut-container {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
+    }
+
+    svg.donut {
+      filter: drop-shadow(0 0 16px rgba(0, 188, 212, 0.18));
+    }
+
+    .legend {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .leg {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .leg-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .leg-name {
+      font-size: 13px;
+      color: var(--gray);
+    }
+
+    .leg-val {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-left: 4px;
+    }
+
+    /* BAR CHART */
+    .bar-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+      margin: 20px 0;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .bar-lbl {
+      width: 120px;
+      font-size: 12px;
+      color: var(--gray);
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 34px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 7px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      padding-right: 12px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      transition: width 1.4s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .bar-num {
+      width: 80px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--white);
+      flex-shrink: 0;
+    }
+
+    /* AREA CHART */
+    svg.area {
+      overflow: visible;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      position: relative;
+      padding-right: 38px;
+      margin: 26px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      right: 11px;
+      top: 12px;
+      bottom: 12px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--cyan), var(--blue2), var(--orange2));
+    }
+
+    .tl {
+      position: relative;
+      margin-bottom: 30px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 26px;
+      transition: .3s;
+    }
+
+    .tl:hover {
+      border-color: rgba(0, 188, 212, .22);
+      transform: translateX(-3px);
+    }
+
+    .tl-dot {
+      position: absolute;
+      right: -38px;
+      top: 24px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 3px solid var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .d1 {
+      background: var(--cyan);
+      color: var(--navy);
+    }
+
+    .d2 {
+      background: var(--blue2);
+      color: #fff;
+    }
+
+    .d3 {
+      background: var(--orange2);
+      color: #fff;
+    }
+
+    .tl-hd {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .tl-ttl {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .tl-time {
+      font-size: 11px;
+      padding: 3px 13px;
+      border-radius: 20px;
+      background: rgba(0, 188, 212, 0.1);
+      color: var(--cyan);
+      border: 1px solid rgba(0, 188, 212, 0.22);
+      font-weight: 700;
+    }
+
+    .tl-txt {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .tl-goal {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255, 179, 0, 0.08);
+      border: 1px solid rgba(255, 179, 0, 0.22);
+      color: var(--gold);
+      padding: 5px 14px;
+      border-radius: 25px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* SCENARIOS */
+    .scenarios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .sc {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 18px;
+      text-align: center;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sc::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 3px;
+    }
+
+    .sc-1::after {
+      background: linear-gradient(90deg, transparent, var(--gray), transparent);
+    }
+
+    .sc-2::after {
+      background: linear-gradient(90deg, transparent, var(--blue2), transparent);
+    }
+
+    .sc-3::after {
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+    }
+
+    .sc-4::after {
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .sc:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 188, 212, 0.2);
+    }
+
+    .sc-lbl {
+      font-size: 12px;
+      color: var(--gray);
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .sc-time {
+      font-size: 11px;
+      color: var(--gray);
+      margin-bottom: 14px;
+    }
+
+    .sc-num {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 30px;
+      font-weight: 900;
+      margin-bottom: 3px;
+    }
+
+    .sc-unit {
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    .sc-apps {
+      font-size: 11px;
+      color: var(--gray);
+      margin-top: 9px;
+      padding-top: 9px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ROLE SPLIT */
+    .role-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 24px 0;
+    }
+
+    @media(max-width:540px) {
+      .role-split {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .role-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .role-hd {
+      padding: 16px 22px;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .rh-tech {
+      background: rgba(21, 101, 192, 0.18);
+      color: var(--cyan);
+    }
+
+    .rh-partner {
+      background: rgba(230, 81, 0, 0.14);
+      color: var(--orange2);
+    }
+
+    .role-body {
+      padding: 14px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .ri {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      color: rgba(238, 244, 255, .82);
+    }
+
+    .ri-dot {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 10px;
+    }
+
+    .ri-blue {
+      background: rgba(21, 101, 192, 0.22);
+      color: var(--cyan);
+    }
+
+    .ri-orange {
+      background: rgba(230, 81, 0, 0.18);
+      color: var(--orange2);
+    }
+
+    /* FOUNDER BOX */
+    .founder-banner {
+      background: linear-gradient(135deg, rgba(21, 101, 192, 0.15), rgba(0, 188, 212, 0.08));
+      border: 1px solid rgba(0, 188, 212, 0.2);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin: 24px 0;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .founder-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 24px;
+      font-weight: 900;
+      color: #fff;
+      box-shadow: 0 0 24px rgba(0, 188, 212, 0.35);
+    }
+
+    .founder-info {}
+
+    .founder-name {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+
+    .founder-title {
+      font-size: 13px;
+      color: var(--cyan);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .founder-desc {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fd {
+      from {
+        opacity: 0;
+        transform: translateY(-18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .rv {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+
+    .rv.on {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* PROGRESS PIE */
+    .pie-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .pie-item {
+      text-align: center;
+    }
+
+    .pie-item svg {
+      filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.15));
+    }
+
+    .pie-lbl {
+      font-size: 12px;
+      color: var(--gray);
+      margin-top: 6px;
+    }
+
+    .pie-val {
+      font-family: 'Tajawal', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--white);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-fx"></div>
+  <div class="bg-grid"></div>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-brand">
+      <span>📱</span>
+      <div>
+        مشروع تطبيقات أندرويد
+        <br><span>محمود خالد الترامسي · مهندس برمجيات</span>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a href="#idea" class="nl">الفكرة</a>
+      <a href="#shares" class="nl">الأسهم</a>
+      <a href="#revenue" class="nl">الربح</a>
+      <a href="#phases" class="nl">المراحل</a>
+      <a href="#partnership" class="nl">الشراكة</a>
+      <a href="#risks" class="nl">المخاطر</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-chip">📋 دراسة جدوى · 2026</div>
+    <h1>مشروع<br><em>تطبيقات أندرويد</em></h1>
+    <div class="hero-by">إعداد وتقديم</div>
+    <div class="hero-name">محمود خالد الترامسي &nbsp;·&nbsp; <span>مهندس برمجيات</span></div>
+    <p class="hero-desc">دخل رقمي متكرر من إعلانات Google Play — مش وعد سريع، ده مشروع حقيقي بيحتاج صبر واستمرار</p>
+    <div class="hero-kpis">
+      <div class="kpi">
+        <div class="kpi-val" data-count="3">0</div>
+        <div class="kpi-lbl">مليار مستخدم<br>أندرويد حول العالم</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val" data-count="95">0</div>
+        <div class="kpi-lbl">% تطبيقات مجانية<br>تعتمد على إعلانات</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val">6,000</div>
+        <div class="kpi-lbl">جنيه سعر السهم<br>الكامل المقترح</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val">3-4</div>
+        <div class="kpi-lbl">أشهر لأول<br>دخل ثابت متوقع</div>
+      </div>
+    </div>
+    <div class="scroll-arrow">↓ اسحب للأسفل</div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- SECTION 0: FOUNDER -->
+  <section class="sec" id="founder">
+    <div class="sec-head rv">
+      <span class="sec-num">00</span>
+      <h2 class="sec-ttl">مين وراء المشروع؟</h2>
+    </div>
+    <div class="founder-banner rv">
+      <div class="founder-avatar">م</div>
+      <div class="founder-info">
+        <div class="founder-name">محمود خالد الترامسي</div>
+        <div class="founder-title">مهندس برمجيات — متخصص تطبيقات أندرويد</div>
+        <div class="founder-desc">
+          خبرة عملية حقيقية في تطوير تطبيقات أندرويد والشغل مع عملاء مختلفين. لاحظت إن الشغل الفريلانس بيدي دخل لمرة
+          واحدة، فقررت أبني أصول رقمية خاصة بيها دخل متكرر ومستمر. المشروع ده مش فكرة — ده قرار استراتيجي مبني على خبرة
+          وتخطيط.
+        </div>
+      </div>
+    </div>
+    <div class="qa-wrap">
+      <div class="qa rv">
+        <div class="qa-q">
+          <div class="badge-q">س</div>
+          <div class="qt">ليه محمود هو الشخص المناسب؟</div>
+        </div>
+        <div class="qa-a">
+          <div class="badge-a">ج</div>
+          <div class="at">لأنه <strong>هو اللي هيشيل الحمل الأكبر</strong> — البرمجة، النشر، الصيانة، التحديثات، إدارة
+            AdMob، وحل المشاكل التقنية. مش محتاج يتعلم حاجة جديدة — المهارة موجودة، المطلوب بس <b>وقت ودعم</b>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- SECTION 1: IDEA -->
+  <section class="sec" id="idea">
+    <div class="sec-head rv">
+      <span class="sec-num">01</span>
+      <h2 class="sec-ttl">الفكرة — إيه اللي بنبنيه؟</h2>
+    </div>
+    <div class="qa-wrap">
+      <div class="qa rv">
+        <div class="qa-q">
+          <div class="badge-q">س</div>
+          <div class="qt">إيه الفرق بين الشغل الفريلانس والمشروع ده؟</div>
+        </div>
+        <div class="qa-a">
+          <div class="badge-a">ج</div>
+          <div class="at">الفريلانس = دخل مرة واحدة لما المشروع يخلص. التطبيقات الخاصة = <strong>دخل شهري متكرر</strong>
+            طول ما في مستخدمين. الفرق في المثال التالي:</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- comparison bars -->
+    <div class="bar-chart rv">
+      <div class="bar-row">
+        <div class="bar-lbl">الفريلانس (مشروع 3 أشهر)</div>
+        <div class="bar-track">
+          <div class="bar-fill"
+            style="width:0%;background:linear-gradient(90deg,rgba(150,150,150,0.4),rgba(150,150,150,0.6))" data-w="48">
+            يخلص بعد 3 شهور</div>
+        </div>
+        <div class="bar-num" style="color:var(--gray)">مؤقت</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl">تطبيق واحد (سنة كاملة)</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--blue),var(--blue2))" data-w="68">
+            يفضل يكسب</div>
+        </div>
+        <div class="bar-num" style="color:var(--blue2)">متكرر</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-lbl">محفظة 8 تطبيقات</div>
+        <div class="bar-track">
+          <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--cyan),var(--green2))"
+            data-w="92">يتضاعف مع الوقت</div>
+        </div>
+        <div class="bar-num" style="color:var(--cyan)">متراكم ✓</div>
+      </div>
+    </div>
+
+    <div class="qa-wrap" style="margin-top:20px">
+      <div class="qa rv">
+        <div class="qa-q">
+          <div class="badge-q">س</div>
+          <div class="qt">هل ده نموذج عمل ناجح فعلاً؟</div>
+        </div>
+        <div class="qa-a">
+          <div class="badge-a">ج</div>
+          <div class="at">أيوه — آلاف المطورين المستقلين حول العالم بيعيشوا من محافظ تطبيقات. السر مش في عبقرية التطبيق،
+            السر في <strong>بناء أكتر من تطبيق والاستمرار</strong>.</div>
+        </div>
+      </div>
+    </div>
+    <div class="box box-blue rv">
+      <p>💡 <strong>القاعدة الذهبية:</strong> كل تطبيق بنطلقه هو أصل رقمي مستقل. لو 3 تطبيقات من أصل 8 نجحوا — الـ 3 دول
+        بيغطوا الباقي ويفضلوا يجيبوا دخل لسنين. زي محفظة استثمار بالظبط.</p>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- SECTION 2: SHARES -->
+  <section class="sec" id="shares">
+    <div class="sec-head rv">
+      <span class="sec-num">02</span>
+      <h2 class="sec-ttl">الأسهم — إزاي الاستثمار بيتحسب؟</h2>
+    </div>
+
+    <div class="qa-wrap">
+      <div class="qa rv">
+        <div class="qa-q">
+          <div class="badge-q">س</div>
+          <div class="qt">إيه فكرة الأسهم في المشروع ده؟</div>
+        </div>
+        <div class="qa-a">
+          <div class="badge-a">ج</div>
+          <div class="at">المشروع اتقسم لـ <strong>أسهم، السهم الكامل = 6,000 جنيه</strong>. لكن مش لازم تشتري سهم كامل
+            — ممكن تشتري نص سهم أو ربع سهم، وتاخد نسبة ربح بالنسبة دي. كل ما زدت في الاستثمار — زادت نسبتك من الأرباح.
+          </div>
+        </div>
+      </div>
+      <div class="qa rv">
+        <div class="qa-q">
+          <div class="badge-q">س</div>
+          <div class="qt">ومحمود بيدفع برضو؟</div>
+        </div>
+        <div class="qa-a">
+          <div class="badge-a">ج</div>
+          <div class="at">أيوه — محمود بيدفع حصته هو كمان. مش بس بيشتغل — <b>هو شريك مالي برضو</b>. بالإضافة لكده، هو
+            بيشيل <strong>عبء المؤسس</strong>: البرمجة، الصيانة، التحديثات، إدارة الحسابات، وحل المشاكل التقنية — وده
+            بيتحسب له كنسبة إضافية فوق نسبته المالية.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INTERACTIVE SLIDER -->
+    <div class="share-section rv">
+      <div class="share-title">🎛️ احسب نسبتك من الأرباح</div>
+      <div class="share-sub">حرّك الـ slider تبعك وشوف نسبتك بالنسبة لمحمود</div>
+
+      <div class="slider-group">
+        <div class="slider-label">
+          <span class="slider-lbl-txt">مبلغ استثمارك (جنيه)</span>
+          <span class="slider-lbl-val" id="inv-val">3,000 ج</span>
+        </div>
+        <input type="range" min="1000" max="6000" step="500" value="3000" id="inv-slider">
+      </div>
+
+      <div class="share-results">
+        <div class="sr-card founder">
+          <div class="sr-who">🖥️ محمود — المؤسس والمطور</div>
+          <div class="sr-pct cyan" id="founder-pct">—</div>
+          <div class="sr-detail" id="founder-detail">—</div>
+          <div class="sr-amount" id="founder-amount">—</div>
+        </div>
+        <div class="sr-card partner">
+          <div class="sr-who">💼 الشريك / أنت</div>
+          <div class="sr-pct orange" id="partner-pct">—</div>
+          <div class="sr-detail" id="partner-detail">—</div>
+          <div class="sr-amount" id="partner-amount">—</div>
+        </div>
+      </div>
+
+      <div class="box box-blue" style="margin-top:20px" id="slider-note">
+        <p id="slider-note-txt">—</p>
+      </div>
+    </div>
+
+    <!-- Share options table -->
+    <div class="tbl-wrap rv">
+      <table>
+        <thead>
+          <tr>
+            <th>خيار الاستثمار</th>
+            <th>المبلغ</th>
+            <th>نسبة الشريك من الأرباح</th>
+            <th>نسبة محمود (مالي + مؤسس)</th>
+            <th>ملاحظة</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ربع سهم</td>
+            <td><span class="hl">1,500 ج</span></td>
+            <td><span class="hl-orange">12.5%</span></td>
+            <td><span class="hl">87.5%</span></td>
+            <td>دخول بسيط لتجربة الفكرة</td>
+          </tr>
+          <tr>
+            <td>نص سهم</td>
+            <td><span class="hl">3,000 ج</span></td>
+            <td><span class="hl-orange">22%</span></td>
+            <td><span class="hl">78%</span></td>
+            <td>خيار متوازن وموصى به</td>
+          </tr>
+          <tr>
+            <td>ثلاثة أرباع سهم</td>
+            <td><span class="hl">4,500 ج</span></td>
+            <td><span class="hl-orange">30%</span></td>
+            <td><span class="hl">70%</span></td>
+            <td>مشاركة أقوى في الأرباح</td>
+          </tr>
+          <tr>
+            <td><strong>سهم كامل ⭐</strong></td>
+            <td><span class="hl-gold"><strong>6,000 ج</strong></span></td>
+            <td><span class="hl-gold"><strong>38%</strong></span></td>
+            <td><span class="hl"><strong>62%</strong></span></td>
+            <td>أعلى نسبة متاحة للشريك</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box box-orange rv">
+      <p>⚠️ <strong>ليه محمود بياخد نسبة أكبر دايماً؟</strong> لأن هو بيدفع مالياً زيك، وفوق كده بيشيل كل الضغط التقني —
+        البرمجة، الصيانة، التحديثات، وإدارة الحسابات. الفرق في النسبة هو "علاوة المؤسس" مش زيادة بلا سبب.</p>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- SECTION 3: REVENUE -->
+  <section class="sec" id="revenue">
+    <div class="sec-head rv">
+      <span class="sec-num">03</span>
+      <h2 class="sec-ttl">الربح — من فين وإزاي؟</h2>
+    </div>
+    <div class="qa-wrap">
+      <div class="qa rv">
+        <div class="qa-q">
+          <div class="badge-q">س</div>
+          <div class="qt">إزاي تطبيق مجاني بيكسب؟</div>
+        </div>
+        <div class="qa-a">
+          <div class="badge-a">ج</div>
+          <div class="at">عن طريق الإعلانات جوه التطبيق. Google بتدفع لينا مقابل كل ألف ظهور إعلاني. التطبيق مجاني
+            للمستخدم — <strong>والمعلن هو اللي بيدفع</strong>. النظام اسمه AdMob وهو المصدر الأساسي للدخل.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ad types bar -->
+    <div style="margin:24px 0" class="rv">
+      <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px;">متوسط الربح لكل 1,000 ظهور
+        (eCPM)</div>
+      <div class="bar-chart">
+        <div class="bar-row">
+          <div class="bar-lbl">Banner صغير</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,#37474F,#607D8B)" data-w="12">أسفل
+              الشاشة</div>
+          </div>
+          <div class="bar-num">$0.1 — $0.5</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-lbl">App Open</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--green),var(--green2))"
+              data-w="38">عند فتح التطبيق</div>
+          </div>
+          <div class="bar-num">$1 — $3</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-lbl">Interstitial</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--blue),var(--blue2))"
+              data-w="52">كامل الشاشة</div>
+          </div>
+          <div class="bar-num">$1 — $5</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-lbl">Rewarded ⭐</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--orange),var(--gold))"
+              data-w="92">فيديو مقابل مكافأة</div>
+          </div>
+          <div class="bar-num" style="color:var(--gold)">$3 — $10 ⭐</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- donut: income sources -->
+    <div class="rv">
+      <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px;">توزيع مصادر الدخل المستقبلي
+      </div>
+      <div class="donut-container">
+        <svg class="donut" width="190" height="190" viewBox="0 0 190 190">
+          <defs>
+            <linearGradient id="dg1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#1565C0" />
+              <stop offset="100%" stop-color="#00BCD4" />
+            </linearGradient>
+            <linearGradient id="dg2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#E65100" />
+              <stop offset="100%" stop-color="#FFB300" />
+            </linearGradient>
+            <linearGradient id="dg3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00695C" />
+              <stop offset="100%" stop-color="#26A69A" />
+            </linearGradient>
+          </defs>
+          <circle cx="95" cy="95" r="66" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="26" />
+          <circle cx="95" cy="95" r="66" fill="none" stroke="url(#dg1)" stroke-width="26" stroke-dasharray="0 414.7"
+            stroke-dashoffset="0" transform="rotate(-90 95 95)" class="dc" data-dash="249 414.7" />
+          <circle cx="95" cy="95" r="66" fill="none" stroke="url(#dg2)" stroke-width="26" stroke-dasharray="0 414.7"
+            stroke-dashoffset="-249" transform="rotate(-90 95 95)" class="dc" data-dash="103.7 414.7" />
+          <circle cx="95" cy="95" r="66" fill="none" stroke="url(#dg3)" stroke-width="26" stroke-dasharray="0 414.7"
+            stroke-dashoffset="-352.7" transform="rotate(-90 95 95)" class="dc" data-dash="62 414.7" />
+          <text x="95" y="89" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.45)"
+            font-family="Cairo">مصادر</text>
+          <text x="95" y="107" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.45)"
+            font-family="Cairo">الدخل</text>
+        </svg>
+        <div class="legend">
+          <div class="leg">
+            <div class="leg-dot" style="background:var(--cyan)"></div><span class="leg-val">60%</span><span
+              class="leg-name">إعلانات AdMob</span>
+          </div>
+          <div class="leg">
+            <div class="leg-dot" style="background:var(--orange2)"></div><span class="leg-val">25%</span><span
+              class="leg-name">مشتريات داخل التطبيق</span>
+          </div>
+          <div class="leg">
+            <div class="leg-dot" style="background:var(--green2)"></div><span class="leg-val">15%</span><span
+              class="leg-name">اشتراكات وعمولات</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- SECTION 4: PHASES -->
+  <section class="sec" id="phases">
+    <div class="sec-head rv">
+      <span class="sec-num">04</span>
+      <h2 class="sec-ttl">مراحل المشروع — خطوة بخطوة</h2>
+    </div>
+    <div class="timeline rv">
+      <div class="tl">
+        <div class="tl-dot d1">1</div>
+        <div class="tl-hd"><span class="tl-ttl">التأسيس</span><span class="tl-time">الشهر 1 — 2</span></div>
+        <div class="tl-txt">إطلاق أول تطبيقين بسيطين في فئة "الأدوات" أو "التسلية". التركيز على الجودة الأساسية والتجربة
+          السلسة.
+          إطلاق قوي مع ASO (تحسين متجر التطبيقات) وتركيز على جمع التقييمات الإيجابية.</div>
+        <span class="tl-goal">🎯 أول 500 — 1,000 مستخدم نشط</span>
+      </div>
+      <div class="tl">
+        <div class="tl-dot d2">2</div>
+        <div class="tl-hd"><span class="tl-ttl">النمو</span><span class="tl-time">الشهر 3 — 5</span></div>
+        <div class="tl-txt">توسيع المحفظة لـ 5 تطبيقات. تحسين التطبيقات الأولى بناءً على تقييمات المستخدمين. بدء ASO قوي
+          + تسويق سوشيال ميديا. Cross-Promotion بين التطبيقات بالمجان.</div>
+        <span class="tl-goal">🎯 أول دخل شهري ثابت 1,500 — 4,000 جنيه</span>
+      </div>
+      <div class="tl">
+        <div class="tl-dot d3">3</div>
+        <div class="tl-hd"><span class="tl-ttl">النضج</span><span class="tl-time">الشهر 6 — 12</span></div>
+        <div class="tl-txt">10+ تطبيقات في المحفظة. إضافة نسخ بريميوم ومدفوعة. دراسة ترجمة التطبيقات الناجحة للإنجليزية
+          (eCPM أعلى بكثير).</div>
+        <span class="tl-goal">🎯 8,000 — 20,000 جنيه شهرياً</span>
+      </div>
+    </div>
+    <div class="box box-orange rv">
+      <p>⚠️ <strong>بصراحة:</strong> الشهور الأولى هي شهور بناء مش شهور كسب. الدخل بيجي بالتدريج — مش دفعة واحدة. اللي
+        ما يقدرش ينتظر 3-4 أشهر قبل ما يشوف أرقام حقيقية — المشروع ده مش مناسبله.</p>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- SECTION 5: NUMBERS -->
+  <section class="sec" id="numbers">
+    <div class="sec-head rv">
+      <span class="sec-num">05</span>
+      <h2 class="sec-ttl">الأرقام الحقيقية — بدون تجميل</h2>
+    </div>
+
+    <!-- تكاليف الإنتاج الفعلية -->
+    <div class="qa-wrap">
+      <div class="qa rv">
+        <div class="qa-q">
+          <div class="badge-q">س</div>
+          <div class="qt">قد إيه تكلفة إنتاج التطبيق الواحد فعلاً؟</div>
+        </div>
+        <div class="qa-a">
+          <div class="badge-a">ج</div>
+          <div class="at">تكلفة إنتاج التطبيق الواحد بتتكون من <strong>وقت التطوير + التكاليف المالية المباشرة</strong>.
+            إنتاج تطبيق متوسط يحتاج 2-4 أسابيع شغل من محمود، وده استثمار حقيقي بيقدّره بالشكل ده:</div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <div class="tbl-wrap rv">
+      <table>
+        <thead>
+          <tr>
+            <th>بند التكلفة</th>
+            <th>نوعها</th>
+            <th>القيمة</th>
+            <th>من يتحملها</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>رسوم Google Play Developer</td>
+
+          </tr>
+          <tr>
+            <td>وقت التطوير للتطبيق الواحد</td>
+            <td>جهد = مال</td>
+            <td><span class="hl-orange">2,000 — 5,000 ج قيمة سوقية</span></td>
+            <td>محمود — يُحتسب من نسبته</td>
+          </tr>
+          <tr>
+            <td>تصميم الأيقونات والواجهات</td>
+            <td>لكل تطبيق</td>
+            <td><span class="hl">300 — 800 ج</span></td>
+            <td>من رأس المال المشترك</td>
+          </tr>
+          <tr>
+            <td>Firebase / باك-إند (لو محتاج)</td>
+            <td>شهري</td>
+            <td><span class="hl-green">صفر — 200 ج</span></td>
+            <td>من رأس المال المشترك</td>
+          </tr>
+          <tr>
+            <td>ميزانية تسويق (اختياري في البداية)</td>
+            <td>شهري</td>
+            <td><span class="hl">500 — 2,000 ج</span></td>
+            <td>من رأس المال المشترك</td>
+          </tr>
+          <tr>
+            <td><strong>إجمالي رأس المال المطلوب</strong></td>
+            <td>—</td>
+            <td><span class="hl-gold"><strong>4,000 — 6,000 ج</strong></span></td>
+            <td>الشريك + محمود</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Growth chart -->
+    <div style="margin-top:36px" class="rv">
+      <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px;">منحنى نمو الأرباح المتوقع (12
+        شهر) — بدون تجميل</div>
+      <svg class="area" width="100%" viewBox="0 0 680 240" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#00BCD4" stop-opacity="0.28" />
+            <stop offset="100%" stop-color="#00BCD4" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#1565C0" />
+            <stop offset="40%" stop-color="#00BCD4" />
+            <stop offset="100%" stop-color="#FFB300" />
+          </linearGradient>
+        </defs>
+        <!-- grid -->
+        <line x1="0" y1="190" x2="680" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        <line x1="0" y1="145" x2="680" y2="145" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        <line x1="0" y1="100" x2="680" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        <line x1="0" y1="55" x2="680" y2="55" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+        <!-- y labels -->
+        <text x="8" y="194" font-size="10" fill="rgba(255,255,255,0.3)" font-family="Cairo">0</text>
+        <text x="8" y="149" font-size="10" fill="rgba(255,255,255,0.3)" font-family="Cairo">3k ج</text>
+        <text x="8" y="104" font-size="10" fill="rgba(255,255,255,0.3)" font-family="Cairo">8k ج</text>
+        <text x="8" y="59" font-size="10" fill="rgba(255,255,255,0.3)" font-family="Cairo">20k ج</text>
+        <!-- flat then ramp (realistic) -->
+        <path
+          d="M40,190 C80,190 100,188 140,185 C180,182 200,178 230,172 C265,164 285,152 320,138 C360,122 395,104 440,85 C480,68 520,55 640,42"
+          fill="none" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round" class="aline"
+          style="stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 2s .3s ease" />
+        <path
+          d="M40,190 C80,190 100,188 140,185 C180,182 200,178 230,172 C265,164 285,152 320,138 C360,122 395,104 440,85 C480,68 520,55 640,42 L640,190 Z"
+          fill="url(#ag)" class="aarea" style="opacity:0;transition:opacity 1s .8s" />
+        <!-- milestone dots -->
+        <circle cx="140" cy="185" r="5" fill="#1E88E5" class="adot" style="opacity:0;transition:opacity .3s 1s" />
+        <circle cx="270" cy="166" r="5" fill="#00BCD4" class="adot" style="opacity:0;transition:opacity .3s 1.3s" />
+        <circle cx="440" cy="85" r="5" fill="#FFB300" class="adot" style="opacity:0;transition:opacity .3s 1.6s" />
+        <!-- labels -->
+        <text x="115" y="178" font-size="9" fill="rgba(0,188,212,.7)" font-family="Cairo">شهر 2</text>
+        <text x="245" y="160" font-size="9" fill="rgba(0,188,212,.7)" font-family="Cairo">شهر 4</text>
+        <text x="415" y="78" font-size="9" fill="rgba(255,179,0,.8)" font-family="Cairo">شهر 8</text>
+        <!-- x labels -->
+        <text x="40" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر
+          1</text>
+        <text x="170" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر
+          3</text>
+        <text x="330" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر
+          6</text>
+        <text x="490" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر
+          9</text>
+        <text x="635" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر
+          12</text>
+      </svg>
+    </div>
+
+    <!-- Scenarios -->
+    <div style="font-size:14px;font-weight:700;color:var(--white);margin:30px 0 16px">سيناريوهات الأرباح الشهرية (حصة
+      إجمالية قبل التقسيم)</div>
+    <div class="scenarios rv">
+      <div class="sc sc-1">
+        <div class="sc-lbl">بطيء</div>
+        <div class="sc-time">بعد 3 أشهر</div>
+        <div class="sc-num" style="color:var(--gray)">500 — 1,500</div>
+        <div class="sc-unit">جنيه / شهر</div>
+        <div class="sc-apps">2 تطبيقات · بداية الطريق</div>
+      </div>
+      <div class="sc sc-2">
+        <div class="sc-lbl">واقعي</div>
+        <div class="sc-time">بعد 5 أشهر</div>
+        <div class="sc-num" style="color:var(--blue2)">2,000 — 6,000</div>
+        <div class="sc-unit">جنيه / شهر</div>
+        <div class="sc-apps">5 تطبيقات · نمو حقيقي</div>
+      </div>
+      <div class="sc sc-3">
+        <div class="sc-lbl">جيد</div>
+        <div class="sc-time">بعد 8 أشهر</div>
+        <div class="sc-num" style="color:var(--cyan)">8,000 — 18,000</div>
+        <div class="sc-unit">جنيه / شهر</div>
+        <div class="sc-apps">10 تطبيقات · محفظة قوية</div>
+      </div>
+      <div class="sc sc-4">
+        <div class="sc-lbl">ممتاز</div>
+        <div class="sc-time">بعد 12 شهر</div>
+        <div class="sc-num" style="color:var(--gold)">+25,000</div>
+        <div class="sc-unit">جنيه / شهر</div>
+        <div class="sc-apps">15+ تطبيق · نضج كامل</div>
+      </div>
+    </div>
+    <div class="box box-orange rv">
+      <p>⚠️ <strong>صراحة تامة:</strong> مفيش ضمان لأي رقم من دول. الأرقام دي مبنية على متوسطات السوق الحقيقية من مطورين
+        مستقلين — بعض التطبيقات هتتجاوزها، وبعضها ما هيوصلهاش. <b>الفرق الوحيد بين النجاح والفشل هو الاستمرار.</b></p>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- SECTION 6: PARTNERSHIP -->
+  <section class="sec" id="partnership">
+    <div class="sec-head rv">
+      <span class="sec-num">06</span>
+      <h2 class="sec-ttl">الشراكة — مين بيعمل إيه؟</h2>
+    </div>
+    <div class="role-split rv">
+      <div class="role-card">
+        <div class="role-hd rh-tech">🖥️ محمود — المؤسس والمطور</div>
+        <div class="role-body">
+          <div class="ri">
+            <div class="ri-dot ri-blue">✓</div>برمجة كل التطبيقات من الصفر
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-blue">✓</div>نشرها على Google Play
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-blue">✓</div>إدارة AdMob والحسابات
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-blue">✓</div>تحديثات وصيانة دورية
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-blue">✓</div>حل المشاكل التقنية
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-blue">✓</div>تقرير شهري شفاف
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-blue">✓</div><strong>مساهمة مالية من جيبه برضو</strong>
+          </div>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-hd rh-partner">💼 الشريك الداعم</div>
+        <div class="role-body">
+          <div class="ri">
+            <div class="ri-dot ri-orange">✓</div>المساهمة المالية (حسب الاتفاق)
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-orange">✓</div>التسويق والترويج
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-orange">✓</div>اقتراح أفكار تطبيقات
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-orange">✓</div>متابعة الأرقام والتقارير
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-orange">✓</div>المشاركة في قرارات التوسع
+          </div>
+          <div class="ri">
+            <div class="ri-dot ri-orange">✓</div>دعم معنوي واستمرارية
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box box-blue rv">
+      <p>💡 <strong>الشفافية المالية:</strong> داشبورد AdMob متاح للاطلاع عليه في أي وقت من أي شريك + تقرير شهري تفصيلي
+        بالتحميلات والمستخدمين والأرباح لكل تطبيق. مافيش أي رقم بيتخفى.</p>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- SECTION 7: RISKS -->
+  <section class="sec" id="risks">
+    <div class="sec-head rv">
+      <span class="sec-num">07</span>
+      <h2 class="sec-ttl">المخاطر — بصراحة كاملة بدون تجميل</h2>
+    </div>
+    <div class="tbl-wrap rv">
+      <table>
+        <thead>
+          <tr>
+            <th>المخاطرة</th>
+            <th>الاحتمالية</th>
+            <th>الأثر</th>
+            <th>خطة التعامل</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>بطء الأرباح في البداية</td>
+            <td><span class="hl-orange">مرتفع — متوقع</span></td>
+            <td>متوسط</td>
+            <td>توقع واقعي من اليوم الأول — هو جزء من الخطة</td>
+          </tr>
+          <tr>
+            <td>تطبيق ما ينجحش ويتمسح</td>
+            <td><span class="hl-orange">محتمل لبعضها</span></td>
+            <td>منخفض</td>
+            <td>المحفظة بتغطي — مش بنراهن على تطبيق واحد</td>
+          </tr>
+          <tr>
+            <td>تغيير سياسات Google</td>
+            <td><span class="hl-green">منخفض</span></td>
+            <td>متوسط</td>
+            <td>متابعة مستمرة للسياسات + التزام كامل بالشروط</td>
+          </tr>
+          <tr>
+            <td>انخفاض الـ eCPM موسمياً</td>
+            <td><span class="hl-green">طبيعي ومتوقع</span></td>
+            <td>منخفض</td>
+            <td>موسمي فقط — بيرتفع دايماً في Q4 (أكتوبر-ديسمبر)</td>
+          </tr>
+          <tr>
+            <td>خلاف بين الشركاء</td>
+            <td><span class="hl-green">قابل للتجنب</span></td>
+            <td>مرتفع</td>
+            <td>اتفاق مكتوب + شفافية مالية من اليوم الأول</td>
+          </tr>
+          <tr>
+            <td>التسويق يفشل في جذب مستخدمين</td>
+            <td><span class="hl-orange">ممكن في البداية</span></td>
+            <td>مرتفع</td>
+            <td>ASO + Cross-Promotion + التجربة والتعديل</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="box box-orange rv">
+      <p>🚨 <strong>أكبر خطأ بيقع فيه المطورين:</strong> إطلاق التطبيق والانتظار إنه يلاقي نفسه. التسويق مش اختياري — هو
+        جزء أساسي من الشغل. تطبيق كويس بدون تسويق = تطبيق ما حدش بيعرف عنه.</p>
+    </div>
+  </section>
+  <div class="divider"></div>
+
+  <!-- SECTION 8: CLOSE -->
+  <section class="sec" id="close">
+    <div class="sec-head rv">
+      <span class="sec-num">08</span>
+      <h2 class="sec-ttl">الخلاصة والقرار</h2>
+    </div>
+    <div class="qa-wrap">
+      <div class="qa rv">
+        <div class="qa-q">
+          <div class="badge-q">س</div>
+          <div class="qt">المشروع ده يستحق؟</div>
+        </div>
+        <div class="qa-a">
+          <div class="badge-a">ج</div>
+          <div class="at">لو عندك صبر 4-6 أشهر وما بتدورش على ثراء سريع — <strong>أيوه يستحق</strong>. الاستثمار الأولي
+            صغير، المهارة موجودة، والسوق العربي فيه فرصة حقيقية. ده مشروع <b>بيبني دخل متراكم</b> مش مشروع بيصرف ربح من
+            الأول.</div>
+        </div>
+      </div>
+      <div class="qa rv">
+        <div class="qa-q">
+          <div class="badge-q">س</div>
+          <div class="qt">إيه الخطوة الأولى؟</div>
+        </div>
+        <div class="qa-a">
+          <div class="badge-a">ج</div>
+          <div class="at">
+            1. نتفق على قيمة السهم والنسبة المناسبة للشريك — مكتوبة وموقّعة.<br>
+            2. نبدأ المرحلة التجريبية: تطبيقين في خلال الشهر الأول.<br>
+            3. بعد 3 أشهر نراجع الأرقام الحقيقية ونقرر نكمل إزاي.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="g4 rv" style="margin-top:32px">
+      <div class="card" style="text-align:center;border-color:rgba(0,188,212,0.2)">
+        <div style="font-family:'Tajawal',sans-serif;font-size:34px;font-weight:900;color:var(--cyan)">6,000</div>
+        <div style="font-size:12px;color:var(--gray);margin-top:4px">جنيه — سعر السهم الكامل</div>
+      </div>
+      <div class="card" style="text-align:center;border-color:rgba(255,143,0,0.2)">
+        <div style="font-family:'Tajawal',sans-serif;font-size:34px;font-weight:900;color:var(--orange2)">3-4</div>
+        <div style="font-size:12px;color:var(--gray);margin-top:4px">أشهر لأول دخل ثابت</div>
+      </div>
+      <div class="card" style="text-align:center;border-color:rgba(0,137,123,0.2)">
+        <div style="font-family:'Tajawal',sans-serif;font-size:34px;font-weight:900;color:var(--green2)">38%</div>
+        <div style="font-size:12px;color:var(--gray);margin-top:4px">أعلى نسبة للشريك (سهم كامل)</div>
+      </div>
+      <div class="card" style="text-align:center;border-color:rgba(255,179,0,0.2)">
+        <div style="font-family:'Tajawal',sans-serif;font-size:34px;font-weight:900;color:var(--gold)">∞</div>
+        <div style="font-size:12px;color:var(--gray);margin-top:4px">دخل متكرر بدون سقف</div>
+      </div>
+    </div>
+
+    <div class="box box-green rv" style="margin-top:24px">
+      <p>✅ <strong>الفرصة الحقيقية:</strong> بناء مصدر دخل مستدام ومتزايد من التطبيقات العربية. السوق لسه في بدايته،
+        واللي
+        يدخل دلوقتي عنده فرصة يبني محفظة قوية قبل ما المنافسة تزداد. ده مشروع طويل الأمد — اللي عايز يسرّع الربح أو
+        يغامر بمبلغ كبير — ممكن يدور على حاجة تانية.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer
+    style="position:relative;z-index:1;text-align:center;padding:44px 20px;border-top:1px solid rgba(255,255,255,0.06)">
+    <div style="font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:var(--white);margin-bottom:6px">
+      محمود خالد الترامسي — مهندس برمجيات</div>
+    <div style="font-size:13px;color:var(--gray);line-height:2">
+      دراسة جدوى معدّة للنقاش المشترك — كل الأرقام تقديرية وقابلة للمراجعة<br>
+      <span style="color:rgba(255,255,255,0.2);font-size:11px">وثيقة خاصة بين الشركاء · 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    // ── Reveal ──
+    const rv = document.querySelectorAll('.rv');
+    const io = new IntersectionObserver(es => {
+      es.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = (i % 3) * .07 + 's';
+          e.target.classList.add('on');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: .08 });
+    rv.forEach(el => io.observe(el));
+
+    // ── Bar charts ──
+    const bio = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.bar-fill[data-w]').forEach((b, i) => {
+            setTimeout(() => { b.style.width = b.dataset.w + '%'; }, i * 180);
+          });
+          bio.unobserve(e.target);
+        }
+      });
+    }, { threshold: .2 });
+    document.querySelectorAll('.bar-chart').forEach(el => bio.observe(el));
+
+    // ── Donut ──
+    const dio = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('.dc').forEach((c, i) => {
+            setTimeout(() => { c.style.strokeDasharray = c.dataset.dash; }, i * 220);
+            c.style.transition = 'stroke-dasharray 1.2s ease';
+          });
+          dio.unobserve(e.target);
+        }
+      });
+    }, { threshold: .3 });
+    document.querySelectorAll('svg.donut').forEach(el => dio.observe(el));
+
+    // ── Area chart ──
+    const aio = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          const l = e.target.querySelector('.aline');
+          const a = e.target.querySelector('.aarea');
+          if (l) l.style.strokeDashoffset = '0';
+          if (a) a.style.opacity = '1';
+          e.target.querySelectorAll('.adot').forEach(d => d.style.opacity = '1');
+          aio.unobserve(e.target);
+        }
+      });
+    }, { threshold: .25 });
+    document.querySelectorAll('svg.area').forEach(el => aio.observe(el));
+
+    // ── Hero counters ──
+    function count(el, to, suffix = '') {
+      let v = 0; const s = to / 55;
+      const t = setInterval(() => {
+        v = Math.min(v + s, to);
+        el.textContent = Math.floor(v).toLocaleString() + (suffix || '');
+        if (v >= to) clearInterval(t);
+      }, 18);
+    }
+    setTimeout(() => {
+      document.querySelectorAll('[data-count]').forEach(el => count(el, +el.dataset.count));
+    }, 400);
+
+    // ── Slider logic ──
+    const slider = document.getElementById('inv-slider');
+    const invVal = document.getElementById('inv-val');
+    const fPct = document.getElementById('founder-pct');
+    const pPct = document.getElementById('partner-pct');
+    const fDet = document.getElementById('founder-detail');
+    const pDet = document.getElementById('partner-detail');
+    const fAmt = document.getElementById('founder-amount');
+    const pAmt = document.getElementById('partner-amount');
+    const note = document.getElementById('slider-note-txt');
+    const noteBox = document.getElementById('slider-note');
+
+    function updateSlider() {
+      const inv = parseInt(slider.value);
+      const fullShare = 6000;
+      // partner share ratio of investment
+      const partnerInvRatio = inv / fullShare; // 0..1
+      // founder always invest the difference too
+      const founderInv = fullShare - inv; // what founder contributes financially
+      // partner raw = partnerInvRatio * 38% max
+      const partnerPct = Math.round(partnerInvRatio * 38);
+      const founderPct = 100 - partnerPct;
+
+      invVal.textContent = inv.toLocaleString() + ' ج';
+      pPct.textContent = partnerPct + '%';
+      fPct.textContent = founderPct + '%';
+      pDet.textContent = 'استثمار: ' + inv.toLocaleString() + ' ج';
+      fDet.textContent = 'استثمار: ' + founderInv.toLocaleString() + ' ج + جهد تقني';
+
+      // example profit at 10k/month
+      const ex = 10000;
+      pAmt.textContent = 'مثال: لو الربح 10,000 ج → نصيبك ' + Math.round(ex * partnerPct / 100).toLocaleString() + ' ج';
+      fAmt.textContent = 'مثال: لو الربح 10,000 ج → نصيب محمود ' + Math.round(ex * founderPct / 100).toLocaleString() + ' ج';
+
+      if (inv <= 2000) {
+        noteBox.className = 'box box-orange';
+        note.innerHTML = '<b>ملاحظة:</b> الاستثمار ده صغير نسبياً — كويس كمرحلة تجريبية للتعرف على المشروع. النسبة ' + partnerPct + '% هتفرق مع الوقت لما الأرباح تكبر.';
+      } else if (inv <= 4000) {
+        noteBox.className = 'box box-blue';
+        note.innerHTML = '<strong>خيار متوازن ✓</strong> — استثمار معقول مقابل نسبة ' + partnerPct + '% من الأرباح. ده الخيار الأكثر توصية للبداية.';
+      } else {
+        noteBox.className = 'box box-green';
+        note.innerHTML = '<strong>مشاركة قوية ⭐</strong> — استثمار جاد مقابل ' + partnerPct + '% من كل الأرباح. ده بيعكس ثقة حقيقية في المشروع.';
+      }
+    }
+    slider.addEventListener('input', updateSlider);
+    updateSlider();
+
+    // ── Nav active ──
+    const secs = document.querySelectorAll('section[id]');
+    const nls = document.querySelectorAll('.nl');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      secs.forEach(s => { if (scrollY >= s.offsetTop - 80) cur = s.id; });
+      nls.forEach(a => {
+        const active = a.getAttribute('href') === '#' + cur;
+        a.style.color = active ? 'var(--cyan)' : '';
+        a.style.background = active ? 'rgba(0,188,212,0.1)' : '';
+      });
+    }, { passive: true });
+  </script>
+</body>
+
+</html>
