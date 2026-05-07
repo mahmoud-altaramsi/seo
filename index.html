@@ -48,7 +48,6 @@
       direction: rtl;
     }
 
-    /* BG */
     .bg-fx {
       position: fixed;
       inset: 0;
@@ -71,7 +70,6 @@
       background-size: 55px 55px;
     }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -132,7 +130,6 @@
       }
     }
 
-    /* HERO */
     .hero {
       position: relative;
       z-index: 1;
@@ -254,18 +251,10 @@
     }
 
     @keyframes bounce {
-
-      0%,
-      100% {
-        transform: translateX(-50%) translateY(0);
-      }
-
-      50% {
-        transform: translateX(-50%) translateY(-7px);
-      }
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-7px); }
     }
 
-    /* SECTION */
     .sec {
       position: relative;
       z-index: 1;
@@ -308,7 +297,6 @@
       z-index: 1;
     }
 
-    /* Q&A */
     .qa-wrap {
       display: flex;
       flex-direction: column;
@@ -389,15 +377,9 @@
       padding-top: 3px;
     }
 
-    .at strong {
-      color: var(--cyan);
-    }
+    .at strong { color: var(--cyan); }
+    .at b { color: var(--orange2); }
 
-    .at b {
-      color: var(--orange2);
-    }
-
-    /* BOXES */
     .box {
       border-radius: 14px;
       padding: 18px 24px;
@@ -449,15 +431,9 @@
       line-height: 1.85;
     }
 
-    .box p strong {
-      color: var(--cyan);
-    }
+    .box p strong { color: var(--cyan); }
+    .box p b { color: var(--gold); }
 
-    .box p b {
-      color: var(--gold);
-    }
-
-    /* CARDS GRID */
     .g2 {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -493,23 +469,9 @@
       transform: translateY(-3px);
     }
 
-    .card-ico {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .card-ttl {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 7px;
-    }
-
-    .card-txt {
-      font-size: 13px;
-      color: var(--gray);
-      line-height: 1.7;
-    }
+    .card-ico { font-size: 28px; margin-bottom: 12px; }
+    .card-ttl { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 7px; }
+    .card-txt { font-size: 13px; color: var(--gray); line-height: 1.7; }
 
     .tag {
       display: inline-block;
@@ -520,31 +482,11 @@
       margin-top: 9px;
     }
 
-    .tag-c {
-      background: rgba(0, 188, 212, .12);
-      color: var(--cyan);
-      border: 1px solid rgba(0, 188, 212, .25);
-    }
+    .tag-c { background: rgba(0, 188, 212, .12); color: var(--cyan); border: 1px solid rgba(0, 188, 212, .25); }
+    .tag-o { background: rgba(255, 143, 0, .12); color: var(--orange2); border: 1px solid rgba(255, 143, 0, .25); }
+    .tag-g { background: rgba(0, 137, 123, .12); color: var(--green2); border: 1px solid rgba(0, 137, 123, .25); }
+    .tag-gold { background: rgba(255, 179, 0, .12); color: var(--gold); border: 1px solid rgba(255, 179, 0, .25); }
 
-    .tag-o {
-      background: rgba(255, 143, 0, .12);
-      color: var(--orange2);
-      border: 1px solid rgba(255, 143, 0, .25);
-    }
-
-    .tag-g {
-      background: rgba(0, 137, 123, .12);
-      color: var(--green2);
-      border: 1px solid rgba(0, 137, 123, .25);
-    }
-
-    .tag-gold {
-      background: rgba(255, 179, 0, .12);
-      color: var(--gold);
-      border: 1px solid rgba(255, 179, 0, .25);
-    }
-
-    /* TABLE */
     .tbl-wrap {
       overflow-x: auto;
       border-radius: 14px;
@@ -552,10 +494,7 @@
       margin: 20px 0;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
+    table { width: 100%; border-collapse: collapse; }
 
     thead th {
       background: rgba(21, 101, 192, 0.22);
@@ -572,13 +511,8 @@
       transition: .2s;
     }
 
-    tbody tr:last-child {
-      border-bottom: none;
-    }
-
-    tbody tr:hover {
-      background: rgba(255, 255, 255, .025);
-    }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: rgba(255, 255, 255, .025); }
 
     tbody td {
       padding: 12px 18px;
@@ -587,36 +521,14 @@
       text-align: right;
     }
 
-    tbody tr:nth-child(even) {
-      background: rgba(255, 255, 255, .018);
-    }
+    tbody tr:nth-child(even) { background: rgba(255, 255, 255, .018); }
 
-    .hl {
-      color: var(--cyan);
-      font-weight: 700;
-    }
+    .hl { color: var(--cyan); font-weight: 700; }
+    .hl-gold { color: var(--gold); font-weight: 700; }
+    .hl-green { color: var(--green2); font-weight: 700; }
+    .hl-red { color: #EF9A9A; font-weight: 700; }
+    .hl-orange { color: var(--orange2); font-weight: 700; }
 
-    .hl-gold {
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    .hl-green {
-      color: var(--green2);
-      font-weight: 700;
-    }
-
-    .hl-red {
-      color: #EF9A9A;
-      font-weight: 700;
-    }
-
-    .hl-orange {
-      color: var(--orange2);
-      font-weight: 700;
-    }
-
-    /* SHARE SLIDER */
     .share-section {
       background: var(--card);
       border: 1px solid var(--border);
@@ -625,22 +537,10 @@
       margin: 28px 0;
     }
 
-    .share-title {
-      font-family: 'Tajawal', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 6px;
-    }
+    .share-title { font-family: 'Tajawal', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 6px; }
+    .share-sub { font-size: 13px; color: var(--gray); margin-bottom: 28px; }
 
-    .share-sub {
-      font-size: 13px;
-      color: var(--gray);
-      margin-bottom: 28px;
-    }
-
-    .slider-group {
-      margin-bottom: 26px;
-    }
+    .slider-group { margin-bottom: 26px; }
 
     .slider-label {
       display: flex;
@@ -649,11 +549,7 @@
       margin-bottom: 10px;
     }
 
-    .slider-lbl-txt {
-      font-size: 14px;
-      color: var(--light);
-      font-weight: 600;
-    }
+    .slider-lbl-txt { font-size: 14px; color: var(--light); font-weight: 600; }
 
     .slider-lbl-val {
       font-family: 'Tajawal', sans-serif;
@@ -700,22 +596,10 @@
       text-align: center;
     }
 
-    .sr-card.founder {
-      border-color: rgba(0, 188, 212, 0.25);
-      background: rgba(0, 188, 212, 0.06);
-    }
+    .sr-card.founder { border-color: rgba(0, 188, 212, 0.25); background: rgba(0, 188, 212, 0.06); }
+    .sr-card.partner { border-color: rgba(255, 143, 0, 0.25); background: rgba(255, 143, 0, 0.06); }
 
-    .sr-card.partner {
-      border-color: rgba(255, 143, 0, 0.25);
-      background: rgba(255, 143, 0, 0.06);
-    }
-
-    .sr-who {
-      font-size: 12px;
-      color: var(--gray);
-      margin-bottom: 6px;
-      font-weight: 600;
-    }
+    .sr-who { font-size: 12px; color: var(--gray); margin-bottom: 6px; font-weight: 600; }
 
     .sr-pct {
       font-family: 'Tajawal', sans-serif;
@@ -723,29 +607,11 @@
       font-weight: 900;
     }
 
-    .sr-pct.cyan {
-      color: var(--cyan);
-    }
+    .sr-pct.cyan { color: var(--cyan); }
+    .sr-pct.orange { color: var(--orange2); }
+    .sr-detail { font-size: 12px; color: var(--gray); margin-top: 6px; line-height: 1.6; }
+    .sr-amount { font-size: 15px; font-weight: 700; color: var(--white); margin-top: 8px; }
 
-    .sr-pct.orange {
-      color: var(--orange2);
-    }
-
-    .sr-detail {
-      font-size: 12px;
-      color: var(--gray);
-      margin-top: 6px;
-      line-height: 1.6;
-    }
-
-    .sr-amount {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--white);
-      margin-top: 8px;
-    }
-
-    /* DONUT SVG */
     .donut-container {
       display: flex;
       align-items: center;
@@ -755,62 +621,20 @@
       margin: 20px 0;
     }
 
-    svg.donut {
-      filter: drop-shadow(0 0 16px rgba(0, 188, 212, 0.18));
-    }
+    svg.donut { filter: drop-shadow(0 0 16px rgba(0, 188, 212, 0.18)); }
 
-    .legend {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+    .legend { display: flex; flex-direction: column; gap: 12px; }
 
-    .leg {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .leg { display: flex; align-items: center; gap: 10px; }
+    .leg-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+    .leg-name { font-size: 13px; color: var(--gray); }
+    .leg-val { font-size: 15px; font-weight: 700; color: var(--white); margin-left: 4px; }
 
-    .leg-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 3px;
-      flex-shrink: 0;
-    }
+    .bar-chart { display: flex; flex-direction: column; gap: 13px; margin: 20px 0; }
 
-    .leg-name {
-      font-size: 13px;
-      color: var(--gray);
-    }
+    .bar-row { display: flex; align-items: center; gap: 12px; }
 
-    .leg-val {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--white);
-      margin-left: 4px;
-    }
-
-    /* BAR CHART */
-    .bar-chart {
-      display: flex;
-      flex-direction: column;
-      gap: 13px;
-      margin: 20px 0;
-    }
-
-    .bar-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .bar-lbl {
-      width: 120px;
-      font-size: 12px;
-      color: var(--gray);
-      text-align: right;
-      flex-shrink: 0;
-    }
+    .bar-lbl { width: 120px; font-size: 12px; color: var(--gray); text-align: right; flex-shrink: 0; }
 
     .bar-track {
       flex: 1;
@@ -833,20 +657,10 @@
       transition: width 1.4s cubic-bezier(.16, 1, .3, 1);
     }
 
-    .bar-num {
-      width: 80px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--white);
-      flex-shrink: 0;
-    }
+    .bar-num { width: 80px; font-size: 12px; font-weight: 700; color: var(--white); flex-shrink: 0; }
 
-    /* AREA CHART */
-    svg.area {
-      overflow: visible;
-    }
+    svg.area { overflow: visible; }
 
-    /* TIMELINE */
     .timeline {
       position: relative;
       padding-right: 38px;
@@ -873,10 +687,7 @@
       transition: .3s;
     }
 
-    .tl:hover {
-      border-color: rgba(0, 188, 212, .22);
-      transform: translateX(-3px);
-    }
+    .tl:hover { border-color: rgba(0, 188, 212, .22); transform: translateX(-3px); }
 
     .tl-dot {
       position: absolute;
@@ -894,33 +705,12 @@
       font-family: 'Tajawal', sans-serif;
     }
 
-    .d1 {
-      background: var(--cyan);
-      color: var(--navy);
-    }
+    .d1 { background: var(--cyan); color: var(--navy); }
+    .d2 { background: var(--blue2); color: #fff; }
+    .d3 { background: var(--orange2); color: #fff; }
 
-    .d2 {
-      background: var(--blue2);
-      color: #fff;
-    }
-
-    .d3 {
-      background: var(--orange2);
-      color: #fff;
-    }
-
-    .tl-hd {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-    }
-
-    .tl-ttl {
-      font-size: 17px;
-      font-weight: 700;
-    }
+    .tl-hd { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+    .tl-ttl { font-size: 17px; font-weight: 700; }
 
     .tl-time {
       font-size: 11px;
@@ -932,12 +722,7 @@
       font-weight: 700;
     }
 
-    .tl-txt {
-      font-size: 13px;
-      color: var(--gray);
-      line-height: 1.75;
-      margin-bottom: 12px;
-    }
+    .tl-txt { font-size: 13px; color: var(--gray); line-height: 1.75; margin-bottom: 12px; }
 
     .tl-goal {
       display: inline-flex;
@@ -952,7 +737,6 @@
       font-weight: 700;
     }
 
-    /* SCENARIOS */
     .scenarios {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
@@ -980,61 +764,19 @@
       height: 3px;
     }
 
-    .sc-1::after {
-      background: linear-gradient(90deg, transparent, var(--gray), transparent);
-    }
+    .sc-1::after { background: linear-gradient(90deg, transparent, var(--gray), transparent); }
+    .sc-2::after { background: linear-gradient(90deg, transparent, var(--blue2), transparent); }
+    .sc-3::after { background: linear-gradient(90deg, transparent, var(--cyan), transparent); }
+    .sc-4::after { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
 
-    .sc-2::after {
-      background: linear-gradient(90deg, transparent, var(--blue2), transparent);
-    }
+    .sc:hover { transform: translateY(-5px); border-color: rgba(0, 188, 212, 0.2); }
 
-    .sc-3::after {
-      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-    }
+    .sc-lbl { font-size: 12px; color: var(--gray); margin-bottom: 4px; font-weight: 600; }
+    .sc-time { font-size: 11px; color: var(--gray); margin-bottom: 14px; }
+    .sc-num { font-family: 'Tajawal', sans-serif; font-size: 30px; font-weight: 900; margin-bottom: 3px; }
+    .sc-unit { font-size: 11px; color: var(--gray); }
+    .sc-apps { font-size: 11px; color: var(--gray); margin-top: 9px; padding-top: 9px; border-top: 1px solid var(--border); }
 
-    .sc-4::after {
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    .sc:hover {
-      transform: translateY(-5px);
-      border-color: rgba(0, 188, 212, 0.2);
-    }
-
-    .sc-lbl {
-      font-size: 12px;
-      color: var(--gray);
-      margin-bottom: 4px;
-      font-weight: 600;
-    }
-
-    .sc-time {
-      font-size: 11px;
-      color: var(--gray);
-      margin-bottom: 14px;
-    }
-
-    .sc-num {
-      font-family: 'Tajawal', sans-serif;
-      font-size: 30px;
-      font-weight: 900;
-      margin-bottom: 3px;
-    }
-
-    .sc-unit {
-      font-size: 11px;
-      color: var(--gray);
-    }
-
-    .sc-apps {
-      font-size: 11px;
-      color: var(--gray);
-      margin-top: 9px;
-      padding-top: 9px;
-      border-top: 1px solid var(--border);
-    }
-
-    /* ROLE SPLIT */
     .role-split {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1043,49 +785,18 @@
     }
 
     @media(max-width:540px) {
-      .role-split {
-        grid-template-columns: 1fr;
-      }
+      .role-split { grid-template-columns: 1fr; }
     }
 
-    .role-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-    }
+    .role-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
 
-    .role-hd {
-      padding: 16px 22px;
-      font-size: 15px;
-      font-weight: 700;
-      text-align: center;
-    }
+    .role-hd { padding: 16px 22px; font-size: 15px; font-weight: 700; text-align: center; }
+    .rh-tech { background: rgba(21, 101, 192, 0.18); color: var(--cyan); }
+    .rh-partner { background: rgba(230, 81, 0, 0.14); color: var(--orange2); }
 
-    .rh-tech {
-      background: rgba(21, 101, 192, 0.18);
-      color: var(--cyan);
-    }
+    .role-body { padding: 14px 22px; display: flex; flex-direction: column; gap: 9px; }
 
-    .rh-partner {
-      background: rgba(230, 81, 0, 0.14);
-      color: var(--orange2);
-    }
-
-    .role-body {
-      padding: 14px 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .ri {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 13px;
-      color: rgba(238, 244, 255, .82);
-    }
+    .ri { display: flex; align-items: center; gap: 9px; font-size: 13px; color: rgba(238, 244, 255, .82); }
 
     .ri-dot {
       width: 18px;
@@ -1098,17 +809,9 @@
       font-size: 10px;
     }
 
-    .ri-blue {
-      background: rgba(21, 101, 192, 0.22);
-      color: var(--cyan);
-    }
+    .ri-blue { background: rgba(21, 101, 192, 0.22); color: var(--cyan); }
+    .ri-orange { background: rgba(230, 81, 0, 0.18); color: var(--orange2); }
 
-    .ri-orange {
-      background: rgba(230, 81, 0, 0.18);
-      color: var(--orange2);
-    }
-
-    /* FOUNDER BOX */
     .founder-banner {
       background: linear-gradient(135deg, rgba(21, 101, 192, 0.15), rgba(0, 188, 212, 0.08));
       border: 1px solid rgba(0, 188, 212, 0.2);
@@ -1137,40 +840,13 @@
       box-shadow: 0 0 24px rgba(0, 188, 212, 0.35);
     }
 
-    .founder-info {}
+    .founder-name { font-family: 'Tajawal', sans-serif; font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 3px; }
+    .founder-title { font-size: 13px; color: var(--cyan); font-weight: 600; margin-bottom: 6px; }
+    .founder-desc { font-size: 13px; color: var(--gray); line-height: 1.7; }
 
-    .founder-name {
-      font-family: 'Tajawal', sans-serif;
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 3px;
-    }
-
-    .founder-title {
-      font-size: 13px;
-      color: var(--cyan);
-      font-weight: 600;
-      margin-bottom: 6px;
-    }
-
-    .founder-desc {
-      font-size: 13px;
-      color: var(--gray);
-      line-height: 1.7;
-    }
-
-    /* ANIMATIONS */
     @keyframes fd {
-      from {
-        opacity: 0;
-        transform: translateY(-18px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(-18px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .rv {
@@ -1179,12 +855,8 @@
       transition: opacity .65s ease, transform .65s ease;
     }
 
-    .rv.on {
-      opacity: 1;
-      transform: none;
-    }
+    .rv.on { opacity: 1; transform: none; }
 
-    /* PROGRESS PIE */
     .pie-row {
       display: flex;
       align-items: center;
@@ -1194,26 +866,10 @@
       margin: 20px 0;
     }
 
-    .pie-item {
-      text-align: center;
-    }
-
-    .pie-item svg {
-      filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.15));
-    }
-
-    .pie-lbl {
-      font-size: 12px;
-      color: var(--gray);
-      margin-top: 6px;
-    }
-
-    .pie-val {
-      font-family: 'Tajawal', sans-serif;
-      font-size: 18px;
-      font-weight: 800;
-      color: var(--white);
-    }
+    .pie-item { text-align: center; }
+    .pie-item svg { filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.15)); }
+    .pie-lbl { font-size: 12px; color: var(--gray); margin-top: 6px; }
+    .pie-val { font-family: 'Tajawal', sans-serif; font-size: 18px; font-weight: 800; color: var(--white); }
   </style>
 </head>
 
@@ -1257,7 +913,7 @@
         <div class="kpi-lbl">% تطبيقات مجانية<br>تعتمد على إعلانات</div>
       </div>
       <div class="kpi">
-        <div class="kpi-val">6,000</div>
+        <div class="kpi-val">6,800</div>
         <div class="kpi-lbl">جنيه سعر السهم<br>الكامل المقترح</div>
       </div>
       <div class="kpi">
@@ -1323,7 +979,6 @@
       </div>
     </div>
 
-    <!-- comparison bars -->
     <div class="bar-chart rv">
       <div class="bar-row">
         <div class="bar-lbl">الفريلانس (مشروع 3 أشهر)</div>
@@ -1387,7 +1042,7 @@
         </div>
         <div class="qa-a">
           <div class="badge-a">ج</div>
-          <div class="at">المشروع اتقسم لـ <strong>أسهم، السهم الكامل = 6,000 جنيه</strong>. لكن مش لازم تشتري سهم كامل
+          <div class="at">المشروع اتقسم لـ <strong>أسهم، السهم الكامل = 6,800 جنيه</strong>. لكن مش لازم تشتري سهم كامل
             — ممكن تشتري نص سهم أو ربع سهم، وتاخد نسبة ربح بالنسبة دي. كل ما زدت في الاستثمار — زادت نسبتك من الأرباح.
           </div>
         </div>
@@ -1414,9 +1069,9 @@
       <div class="slider-group">
         <div class="slider-label">
           <span class="slider-lbl-txt">مبلغ استثمارك (جنيه)</span>
-          <span class="slider-lbl-val" id="inv-val">3,000 ج</span>
+          <span class="slider-lbl-val" id="inv-val">5,100 ج</span>
         </div>
-        <input type="range" min="3500" max="6000" step="3850" value="5000" id="inv-slider">
+        <input type="range" min="3800" max="6800" step="1700" value="5100" id="inv-slider">
       </div>
 
       <div class="share-results">
@@ -1454,28 +1109,28 @@
         <tbody>
           <tr>
             <td>ربع سهم</td>
-            <td><span class="hl">1,500 ج</span></td>
+            <td><span class="hl">1,700 ج</span></td>
             <td><span class="hl-orange">12.5%</span></td>
             <td><span class="hl">87.5%</span></td>
             <td>دخول بسيط لتجربة الفكرة</td>
           </tr>
           <tr>
             <td>نص سهم</td>
-            <td><span class="hl">3,000 ج</span></td>
+            <td><span class="hl">3,400 ج</span></td>
             <td><span class="hl-orange">22%</span></td>
             <td><span class="hl">78%</span></td>
             <td>خيار متوازن وموصى به</td>
           </tr>
           <tr>
             <td>ثلاثة أرباع سهم</td>
-            <td><span class="hl">4,500 ج</span></td>
+            <td><span class="hl">5,100 ج</span></td>
             <td><span class="hl-orange">30%</span></td>
             <td><span class="hl">70%</span></td>
             <td>مشاركة أقوى في الأرباح</td>
           </tr>
           <tr>
             <td><strong>سهم كامل ⭐</strong></td>
-            <td><span class="hl-gold"><strong>6,000 ج</strong></span></td>
+            <td><span class="hl-gold"><strong>6,800 ج</strong></span></td>
             <td><span class="hl-gold"><strong>38%</strong></span></td>
             <td><span class="hl"><strong>62%</strong></span></td>
             <td>أعلى نسبة متاحة للشريك</td>
@@ -1511,50 +1166,42 @@
       </div>
     </div>
 
-    <!-- ad types bar -->
     <div style="margin:24px 0" class="rv">
-      <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px;">متوسط الربح لكل 1,000 ظهور
-        (eCPM)</div>
+      <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px;">متوسط الربح لكل 1,000 ظهور (eCPM)</div>
       <div class="bar-chart">
         <div class="bar-row">
           <div class="bar-lbl">Banner صغير</div>
           <div class="bar-track">
-            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,#37474F,#607D8B)" data-w="12">أسفل
-              الشاشة</div>
+            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,#37474F,#607D8B)" data-w="12">أسفل الشاشة</div>
           </div>
           <div class="bar-num">$0.1 — $0.5</div>
         </div>
         <div class="bar-row">
           <div class="bar-lbl">App Open</div>
           <div class="bar-track">
-            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--green),var(--green2))"
-              data-w="38">عند فتح التطبيق</div>
+            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--green),var(--green2))" data-w="38">عند فتح التطبيق</div>
           </div>
           <div class="bar-num">$1 — $3</div>
         </div>
         <div class="bar-row">
           <div class="bar-lbl">Interstitial</div>
           <div class="bar-track">
-            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--blue),var(--blue2))"
-              data-w="52">كامل الشاشة</div>
+            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--blue),var(--blue2))" data-w="52">كامل الشاشة</div>
           </div>
           <div class="bar-num">$1 — $5</div>
         </div>
         <div class="bar-row">
           <div class="bar-lbl">Rewarded ⭐</div>
           <div class="bar-track">
-            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--orange),var(--gold))"
-              data-w="92">فيديو مقابل مكافأة</div>
+            <div class="bar-fill" style="width:0%;background:linear-gradient(90deg,var(--orange),var(--gold))" data-w="92">فيديو مقابل مكافأة</div>
           </div>
           <div class="bar-num" style="color:var(--gold)">$3 — $10 ⭐</div>
         </div>
       </div>
     </div>
 
-    <!-- donut: income sources -->
     <div class="rv">
-      <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px;">توزيع مصادر الدخل المستقبلي
-      </div>
+      <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px;">توزيع مصادر الدخل المستقبلي</div>
       <div class="donut-container">
         <svg class="donut" width="190" height="190" viewBox="0 0 190 190">
           <defs>
@@ -1578,23 +1225,18 @@
             stroke-dashoffset="-249" transform="rotate(-90 95 95)" class="dc" data-dash="103.7 414.7" />
           <circle cx="95" cy="95" r="66" fill="none" stroke="url(#dg3)" stroke-width="26" stroke-dasharray="0 414.7"
             stroke-dashoffset="-352.7" transform="rotate(-90 95 95)" class="dc" data-dash="62 414.7" />
-          <text x="95" y="89" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.45)"
-            font-family="Cairo">مصادر</text>
-          <text x="95" y="107" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.45)"
-            font-family="Cairo">الدخل</text>
+          <text x="95" y="89" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.45)" font-family="Cairo">مصادر</text>
+          <text x="95" y="107" text-anchor="middle" font-size="12" fill="rgba(255,255,255,0.45)" font-family="Cairo">الدخل</text>
         </svg>
         <div class="legend">
           <div class="leg">
-            <div class="leg-dot" style="background:var(--cyan)"></div><span class="leg-val">60%</span><span
-              class="leg-name">إعلانات AdMob</span>
+            <div class="leg-dot" style="background:var(--cyan)"></div><span class="leg-val">60%</span><span class="leg-name">إعلانات AdMob</span>
           </div>
           <div class="leg">
-            <div class="leg-dot" style="background:var(--orange2)"></div><span class="leg-val">25%</span><span
-              class="leg-name">مشتريات داخل التطبيق</span>
+            <div class="leg-dot" style="background:var(--orange2)"></div><span class="leg-val">25%</span><span class="leg-name">مشتريات داخل التطبيق</span>
           </div>
           <div class="leg">
-            <div class="leg-dot" style="background:var(--green2)"></div><span class="leg-val">15%</span><span
-              class="leg-name">اشتراكات وعمولات</span>
+            <div class="leg-dot" style="background:var(--green2)"></div><span class="leg-val">15%</span><span class="leg-name">اشتراكات وعمولات</span>
           </div>
         </div>
       </div>
@@ -1613,8 +1255,7 @@
         <div class="tl-dot d1">1</div>
         <div class="tl-hd"><span class="tl-ttl">التأسيس</span><span class="tl-time">الشهر 1 — 2</span></div>
         <div class="tl-txt">إطلاق أول تطبيقين بسيطين في فئة "الأدوات" أو "التسلية". التركيز على الجودة الأساسية والتجربة
-          السلسة.
-          إطلاق قوي مع ASO (تحسين متجر التطبيقات) وتركيز على جمع التقييمات الإيجابية.</div>
+          السلسة. إطلاق قوي مع ASO (تحسين متجر التطبيقات) وتركيز على جمع التقييمات الإيجابية.</div>
         <span class="tl-goal">🎯 أول 500 — 1,000 مستخدم نشط</span>
       </div>
       <div class="tl">
@@ -1646,7 +1287,6 @@
       <h2 class="sec-ttl">الأرقام الحقيقية — بدون تجميل</h2>
     </div>
 
-    <!-- تكاليف الإنتاج الفعلية -->
     <div class="qa-wrap">
       <div class="qa rv">
         <div class="qa-q">
@@ -1659,7 +1299,6 @@
             إنتاج تطبيق متوسط يحتاج 2-4 أسابيع شغل من محمود، وده استثمار حقيقي بيقدّره بالشكل ده:</div>
         </div>
       </div>
-    </div>
     </div>
 
     <div class="tbl-wrap rv">
@@ -1675,7 +1314,9 @@
         <tbody>
           <tr>
             <td>رسوم Google Play Developer</td>
-
+            <td>مرة واحدة</td>
+            <td><span class="hl">$25 ≈ 800 ج</span></td>
+            <td>من رأس المال المشترك</td>
           </tr>
           <tr>
             <td>وقت التطوير للتطبيق الواحد</td>
@@ -1704,17 +1345,15 @@
           <tr>
             <td><strong>إجمالي رأس المال المطلوب</strong></td>
             <td>—</td>
-            <td><span class="hl-gold"><strong>4,000 — 6,000 ج</strong></span></td>
+            <td><span class="hl-gold"><strong>4,000 — 6,800 ج</strong></span></td>
             <td>الشريك + محمود</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Growth chart -->
     <div style="margin-top:36px" class="rv">
-      <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px;">منحنى نمو الأرباح المتوقع (12
-        شهر) — بدون تجميل</div>
+      <div style="font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px;">منحنى نمو الأرباح المتوقع (12 شهر) — بدون تجميل</div>
       <svg class="area" width="100%" viewBox="0 0 680 240" preserveAspectRatio="none">
         <defs>
           <linearGradient id="ag" x1="0" y1="0" x2="0" y2="1">
@@ -1727,17 +1366,14 @@
             <stop offset="100%" stop-color="#FFB300" />
           </linearGradient>
         </defs>
-        <!-- grid -->
         <line x1="0" y1="190" x2="680" y2="190" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
         <line x1="0" y1="145" x2="680" y2="145" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
         <line x1="0" y1="100" x2="680" y2="100" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
         <line x1="0" y1="55" x2="680" y2="55" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-        <!-- y labels -->
         <text x="8" y="194" font-size="10" fill="rgba(255,255,255,0.3)" font-family="Cairo">0</text>
         <text x="8" y="149" font-size="10" fill="rgba(255,255,255,0.3)" font-family="Cairo">3k ج</text>
         <text x="8" y="104" font-size="10" fill="rgba(255,255,255,0.3)" font-family="Cairo">8k ج</text>
         <text x="8" y="59" font-size="10" fill="rgba(255,255,255,0.3)" font-family="Cairo">20k ج</text>
-        <!-- flat then ramp (realistic) -->
         <path
           d="M40,190 C80,190 100,188 140,185 C180,182 200,178 230,172 C265,164 285,152 320,138 C360,122 395,104 440,85 C480,68 520,55 640,42"
           fill="none" stroke="url(#lg)" stroke-width="2.5" stroke-linecap="round" class="aline"
@@ -1745,31 +1381,21 @@
         <path
           d="M40,190 C80,190 100,188 140,185 C180,182 200,178 230,172 C265,164 285,152 320,138 C360,122 395,104 440,85 C480,68 520,55 640,42 L640,190 Z"
           fill="url(#ag)" class="aarea" style="opacity:0;transition:opacity 1s .8s" />
-        <!-- milestone dots -->
         <circle cx="140" cy="185" r="5" fill="#1E88E5" class="adot" style="opacity:0;transition:opacity .3s 1s" />
         <circle cx="270" cy="166" r="5" fill="#00BCD4" class="adot" style="opacity:0;transition:opacity .3s 1.3s" />
         <circle cx="440" cy="85" r="5" fill="#FFB300" class="adot" style="opacity:0;transition:opacity .3s 1.6s" />
-        <!-- labels -->
         <text x="115" y="178" font-size="9" fill="rgba(0,188,212,.7)" font-family="Cairo">شهر 2</text>
         <text x="245" y="160" font-size="9" fill="rgba(0,188,212,.7)" font-family="Cairo">شهر 4</text>
         <text x="415" y="78" font-size="9" fill="rgba(255,179,0,.8)" font-family="Cairo">شهر 8</text>
-        <!-- x labels -->
-        <text x="40" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر
-          1</text>
-        <text x="170" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر
-          3</text>
-        <text x="330" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر
-          6</text>
-        <text x="490" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر
-          9</text>
-        <text x="635" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر
-          12</text>
+        <text x="40" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر 1</text>
+        <text x="170" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر 3</text>
+        <text x="330" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر 6</text>
+        <text x="490" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر 9</text>
+        <text x="635" y="215" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.35)" font-family="Cairo">شهر 12</text>
       </svg>
     </div>
 
-    <!-- Scenarios -->
-    <div style="font-size:14px;font-weight:700;color:var(--white);margin:30px 0 16px">سيناريوهات الأرباح الشهرية (حصة
-      إجمالية قبل التقسيم)</div>
+    <div style="font-size:14px;font-weight:700;color:var(--white);margin:30px 0 16px">سيناريوهات الأرباح الشهرية (حصة إجمالية قبل التقسيم)</div>
     <div class="scenarios rv">
       <div class="sc sc-1">
         <div class="sc-lbl">بطيء</div>
@@ -1817,50 +1443,24 @@
       <div class="role-card">
         <div class="role-hd rh-tech">🖥️ محمود — المؤسس والمطور</div>
         <div class="role-body">
-          <div class="ri">
-            <div class="ri-dot ri-blue">✓</div>برمجة كل التطبيقات من الصفر
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-blue">✓</div>نشرها على Google Play
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-blue">✓</div>إدارة AdMob والحسابات
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-blue">✓</div>تحديثات وصيانة دورية
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-blue">✓</div>حل المشاكل التقنية
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-blue">✓</div>تقرير شهري شفاف
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-blue">✓</div><strong>مساهمة مالية من جيبه برضو</strong>
-          </div>
+          <div class="ri"><div class="ri-dot ri-blue">✓</div>برمجة كل التطبيقات من الصفر</div>
+          <div class="ri"><div class="ri-dot ri-blue">✓</div>نشرها على Google Play</div>
+          <div class="ri"><div class="ri-dot ri-blue">✓</div>إدارة AdMob والحسابات</div>
+          <div class="ri"><div class="ri-dot ri-blue">✓</div>تحديثات وصيانة دورية</div>
+          <div class="ri"><div class="ri-dot ri-blue">✓</div>حل المشاكل التقنية</div>
+          <div class="ri"><div class="ri-dot ri-blue">✓</div>تقرير شهري شفاف</div>
+          <div class="ri"><div class="ri-dot ri-blue">✓</div><strong>مساهمة مالية من جيبه برضو</strong></div>
         </div>
       </div>
       <div class="role-card">
         <div class="role-hd rh-partner">💼 الشريك الداعم</div>
         <div class="role-body">
-          <div class="ri">
-            <div class="ri-dot ri-orange">✓</div>المساهمة المالية (حسب الاتفاق)
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-orange">✓</div>التسويق والترويج
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-orange">✓</div>اقتراح أفكار تطبيقات
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-orange">✓</div>متابعة الأرقام والتقارير
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-orange">✓</div>المشاركة في قرارات التوسع
-          </div>
-          <div class="ri">
-            <div class="ri-dot ri-orange">✓</div>دعم معنوي واستمرارية
-          </div>
+          <div class="ri"><div class="ri-dot ri-orange">✓</div>المساهمة المالية (حسب الاتفاق)</div>
+          <div class="ri"><div class="ri-dot ri-orange">✓</div>التسويق والترويج</div>
+          <div class="ri"><div class="ri-dot ri-orange">✓</div>اقتراح أفكار تطبيقات</div>
+          <div class="ri"><div class="ri-dot ri-orange">✓</div>متابعة الأرقام والتقارير</div>
+          <div class="ri"><div class="ri-dot ri-orange">✓</div>المشاركة في قرارات التوسع</div>
+          <div class="ri"><div class="ri-dot ri-orange">✓</div>دعم معنوي واستمرارية</div>
         </div>
       </div>
     </div>
@@ -1971,7 +1571,7 @@
 
     <div class="g4 rv" style="margin-top:32px">
       <div class="card" style="text-align:center;border-color:rgba(0,188,212,0.2)">
-        <div style="font-family:'Tajawal',sans-serif;font-size:34px;font-weight:900;color:var(--cyan)">6,000</div>
+        <div style="font-family:'Tajawal',sans-serif;font-size:34px;font-weight:900;color:var(--cyan)">6,800</div>
         <div style="font-size:12px;color:var(--gray);margin-top:4px">جنيه — سعر السهم الكامل</div>
       </div>
       <div class="card" style="text-align:center;border-color:rgba(255,143,0,0.2)">
@@ -1990,15 +1590,13 @@
 
     <div class="box box-green rv" style="margin-top:24px">
       <p>✅ <strong>الفرصة الحقيقية:</strong> بناء مصدر دخل مستدام ومتزايد من التطبيقات العربية. السوق لسه في بدايته،
-        واللي
-        يدخل دلوقتي عنده فرصة يبني محفظة قوية قبل ما المنافسة تزداد. ده مشروع طويل الأمد — اللي عايز يسرّع الربح أو
+        واللي يدخل دلوقتي عنده فرصة يبني محفظة قوية قبل ما المنافسة تزداد. ده مشروع طويل الأمد — اللي عايز يسرّع الربح أو
         يغامر بمبلغ كبير — ممكن يدور على حاجة تانية.</p>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer
-    style="position:relative;z-index:1;text-align:center;padding:44px 20px;border-top:1px solid rgba(255,255,255,0.06)">
+  <footer style="position:relative;z-index:1;text-align:center;padding:44px 20px;border-top:1px solid rgba(255,255,255,0.06)">
     <div style="font-family:'Tajawal',sans-serif;font-size:18px;font-weight:800;color:var(--white);margin-bottom:6px">
       محمود خالد الترامسي — مهندس برمجيات</div>
     <div style="font-size:13px;color:var(--gray);line-height:2">
@@ -2008,7 +1606,7 @@
   </footer>
 
   <script>
-    // ── Reveal ──
+    // Reveal
     const rv = document.querySelectorAll('.rv');
     const io = new IntersectionObserver(es => {
       es.forEach((e, i) => {
@@ -2021,7 +1619,7 @@
     }, { threshold: .08 });
     rv.forEach(el => io.observe(el));
 
-    // ── Bar charts ──
+    // Bar charts
     const bio = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
@@ -2034,7 +1632,7 @@
     }, { threshold: .2 });
     document.querySelectorAll('.bar-chart').forEach(el => bio.observe(el));
 
-    // ── Donut ──
+    // Donut
     const dio = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
@@ -2048,7 +1646,7 @@
     }, { threshold: .3 });
     document.querySelectorAll('svg.donut').forEach(el => dio.observe(el));
 
-    // ── Area chart ──
+    // Area chart
     const aio = new IntersectionObserver(es => {
       es.forEach(e => {
         if (e.isIntersecting) {
@@ -2063,12 +1661,12 @@
     }, { threshold: .25 });
     document.querySelectorAll('svg.area').forEach(el => aio.observe(el));
 
-    // ── Hero counters ──
-    function count(el, to, suffix = '') {
+    // Hero counters
+    function count(el, to) {
       let v = 0; const s = to / 55;
       const t = setInterval(() => {
         v = Math.min(v + s, to);
-        el.textContent = Math.floor(v).toLocaleString() + (suffix || '');
+        el.textContent = Math.floor(v).toLocaleString();
         if (v >= to) clearInterval(t);
       }, 18);
     }
@@ -2076,7 +1674,7 @@
       document.querySelectorAll('[data-count]').forEach(el => count(el, +el.dataset.count));
     }, 400);
 
-    // ── Slider logic ──
+    // Slider logic — fullShare = 6800
     const slider = document.getElementById('inv-slider');
     const invVal = document.getElementById('inv-val');
     const fPct = document.getElementById('founder-pct');
@@ -2090,12 +1688,9 @@
 
     function updateSlider() {
       const inv = parseInt(slider.value);
-      const fullShare = 6000;
-      // partner share ratio of investment
-      const partnerInvRatio = inv / fullShare; // 0..1
-      // founder always invest the difference too
-      const founderInv = fullShare - inv; // what founder contributes financially
-      // partner raw = partnerInvRatio * 38% max
+      const fullShare = 6800;
+      const partnerInvRatio = inv / fullShare;
+      const founderInv = fullShare - inv;
       const partnerPct = Math.round(partnerInvRatio * 38);
       const founderPct = 100 - partnerPct;
 
@@ -2105,15 +1700,14 @@
       pDet.textContent = 'استثمار: ' + inv.toLocaleString() + ' ج';
       fDet.textContent = 'استثمار: ' + founderInv.toLocaleString() + ' ج + جهد تقني';
 
-      // example profit at 10k/month
       const ex = 10000;
       pAmt.textContent = 'مثال: لو الربح 10,000 ج → نصيبك ' + Math.round(ex * partnerPct / 100).toLocaleString() + ' ج';
       fAmt.textContent = 'مثال: لو الربح 10,000 ج → نصيب محمود ' + Math.round(ex * founderPct / 100).toLocaleString() + ' ج';
 
-      if (inv <= 2000) {
+      if (inv <= 3800) {
         noteBox.className = 'box box-orange';
         note.innerHTML = '<b>ملاحظة:</b> الاستثمار ده صغير نسبياً — كويس كمرحلة تجريبية للتعرف على المشروع. النسبة ' + partnerPct + '% هتفرق مع الوقت لما الأرباح تكبر.';
-      } else if (inv <= 4000) {
+      } else if (inv <= 5100) {
         noteBox.className = 'box box-blue';
         note.innerHTML = '<strong>خيار متوازن ✓</strong> — استثمار معقول مقابل نسبة ' + partnerPct + '% من الأرباح. ده الخيار الأكثر توصية للبداية.';
       } else {
@@ -2124,7 +1718,7 @@
     slider.addEventListener('input', updateSlider);
     updateSlider();
 
-    // ── Nav active ──
+    // Nav active
     const secs = document.querySelectorAll('section[id]');
     const nls = document.querySelectorAll('.nl');
     window.addEventListener('scroll', () => {
