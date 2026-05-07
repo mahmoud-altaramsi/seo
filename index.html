@@ -1236,10 +1236,13 @@
         <div class="kpi-val" data-count="95">0</div>
         <div class="kpi-lbl">% تطبيقات مجانية<br>تعتمد على إعلانات</div>
       </div>
-
       <div class="kpi">
-        <div class="kpi-val">3-4</div>
-        <div class="kpi-lbl">أشهر لأول<br>دخل ثابت متوقع</div>
+        <div class="kpi-val">6,800</div>
+        <div class="kpi-lbl">جنيه سعر السهم<br>الكامل المقترح</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-val">20,000</div>
+        <div class="kpi-lbl">جنيه متوسط الربح<br>الشهري المتوقع</div>
       </div>
     </div>
     <div class="scroll-arrow">↓ اسحب للأسفل</div>
@@ -1382,7 +1385,43 @@
       </div>
     </div>
 
+    <!-- INTERACTIVE SLIDER -->
+    <div class="share-section rv">
+      <div class="share-title">🎛️ احسب نسبتك من الأرباح</div>
+      <div class="share-sub">حرّك الـ slider تبعك واختر من الخيارات الثلاثة</div>
 
+      <div class="slider-group">
+        <div class="slider-label">
+          <span class="slider-lbl-txt">مبلغ استثمارك (جنيه)</span>
+          <span class="slider-lbl-val" id="inv-val">5,000 ج</span>
+        </div>
+        <input type="range" min="0" max="2" step="1" value="1" id="inv-slider">
+        <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--gray)">
+          <span>3,800 ج</span>
+          <span>5,000 ج</span>
+          <span>6,800 ج</span>
+        </div>
+      </div>
+
+      <div class="share-results">
+        <div class="sr-card founder">
+          <div class="sr-who">🖥️ محمود — المؤسس والمطور</div>
+          <div class="sr-pct cyan" id="founder-pct">—</div>
+          <div class="sr-detail" id="founder-detail">—</div>
+          <div class="sr-amount" id="founder-amount">—</div>
+        </div>
+        <div class="sr-card partner">
+          <div class="sr-who">💼 الشريك / أنت</div>
+          <div class="sr-pct orange" id="partner-pct">—</div>
+          <div class="sr-detail" id="partner-detail">—</div>
+          <div class="sr-amount" id="partner-amount">—</div>
+        </div>
+      </div>
+
+      <div class="box box-blue" style="margin-top:20px" id="slider-note">
+        <p id="slider-note-txt">—</p>
+      </div>
+    </div>
 
     <!-- Share options table -->
     <div class="tbl-wrap rv">
@@ -1859,7 +1898,54 @@
       document.querySelectorAll('[data-count]').forEach(el => count(el, +el.dataset.count));
     }, 400);
 
-    // No slider - static display only
+    // Slider logic for 3 options
+    const slider = document.getElementById('inv-slider');
+    const invVal = document.getElementById('inv-val');
+    const fPct = document.getElementById('founder-pct');
+    const pPct = document.getElementById('partner-pct');
+    const fDet = document.getElementById('founder-detail');
+    const pDet = document.getElementById('partner-detail');
+    const fAmt = document.getElementById('founder-amount');
+    const pAmt = document.getElementById('partner-amount');
+    const note = document.getElementById('slider-note-txt');
+    const noteBox = document.getElementById('slider-note');
+
+    const options = [
+      { amount: 3800, partnerShare: 21 },
+      { amount: 5000, partnerShare: 28 },
+      { amount: 6800, partnerShare: 38 }
+    ];
+
+    function updateSlider() {
+      const idx = parseInt(slider.value);
+      const option = options[idx];
+      const inv = option.amount;
+      const partnerPct = option.partnerShare;
+      const founderPct = 100 - partnerPct;
+
+      invVal.textContent = inv.toLocaleString() + ' ج';
+      pPct.textContent = partnerPct + '%';
+      fPct.textContent = founderPct + '%';
+      pDet.textContent = 'استثمار: ' + inv.toLocaleString() + ' ج';
+      fDet.textContent = 'استثمار: ' + (6800 - inv).toLocaleString() + ' ج + جهد تقني';
+
+      const ex = 20000;
+      pAmt.textContent = 'مثال: لو الربح 20,000 ج → نصيبك ' + Math.round(ex * partnerPct / 100).toLocaleString() + ' ج';
+      fAmt.textContent = 'مثال: لو الربح 20,000 ج → نصيب محمود ' + Math.round(ex * founderPct / 100).toLocaleString() + ' ج';
+
+      if (inv <= 3800) {
+        noteBox.className = 'box box-orange';
+        note.innerHTML = '<b>ملاحظة:</b> الاستثمار ده معقول — كويس لتجربة الفكرة والتعرف على المشروع. النسبة ' + partnerPct + '% هتفرق مع الوقت لما الأرباح تكبر.';
+      } else if (inv <= 5000) {
+        noteBox.className = 'box box-blue';
+        note.innerHTML = '<strong>خيار متوازن ✓</strong> — استثمار معقول مقابل نسبة ' + partnerPct + '% من الأرباح. ده الخيار الأكثر توصية للبداية.';
+      } else {
+        noteBox.className = 'box box-green';
+        note.innerHTML = '<strong>مشاركة قوية ⭐</strong> — استثمار جاد مقابل ' + partnerPct + '% من كل الأرباح. ده بيعكس ثقة حقيقية في المشروع.';
+      }
+    }
+    slider.addEventListener('input', updateSlider);
+    updateSlider();
 
     // Nav active
     const secs = document.querySelectorAll('section[id]');
